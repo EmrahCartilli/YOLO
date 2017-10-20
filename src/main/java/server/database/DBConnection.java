@@ -398,7 +398,7 @@ public class DBConnection {
 
     public boolean deleteToken(int id) {
         try {
-            PreparedStatement deleteToken = connection.prepareStatement("DELETE FROM Token WHERE Users_userId = ?");
+            PreparedStatement deleteToken = connection.prepareStatement("DELETE FROM Token WHERE Users_user_id = ?");
             deleteToken.setInt(1, id);
             int rowsAffected = deleteToken.executeUpdate();
             if (rowsAffected > 0) {
