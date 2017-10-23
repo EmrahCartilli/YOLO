@@ -15,7 +15,7 @@ public class Digester {
     private static MessageDigest digester;
 
     static {
-        //try-catch: ensures that the program does not fail
+        //try-catch: sikrer at programmet ikke fejler
         try {
             //SHA-256 = Hashing algorithm
             digester = MessageDigest.getInstance("SHA-256");
@@ -33,13 +33,15 @@ public class Digester {
 
     public String hashWithSalt(String string) {
 
+        //Salt-værdien hentes fra config.json filen
         salt = Config.getSalt();
+        //Returnerer string + salt hashed
         return Digester.performHashing(string + salt);
-
     }
 
     /**
      * Performing hash of string
+     * Koden er kopieret fra stackoverflow.com (http://bit.ly/2gwRnMg)
      *
      * @param string input string
      * @return Hashed string

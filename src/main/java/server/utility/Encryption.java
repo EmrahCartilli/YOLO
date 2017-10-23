@@ -6,7 +6,7 @@ import server.config.Config;
 public class Encryption {
 
     /**
-     * Kryptering skal kunne slås til og fra i configfilen
+     * Kryptering kan slås til og fra i config.json
      * <p>
      * Fremgansmåde:
      * <p>
